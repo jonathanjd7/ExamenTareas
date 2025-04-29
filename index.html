@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="estilo.css" />
+  <title>Gestor de Tareas</title>
+  
+</head>
+<body>
+  <video autoplay muted loop id="video-fondo">
+    <source src="./Diseño_JD.mp4" type="video/mp4">
+    Tu navegador no soporta videos HTML5.
+  </video>
+  
+
+  <div class="container">
+    <div class="header">
+      <h2>Tareas</h2>
+      <button id="themeToggle">🌙 Modo oscuro</button>
+    </div>
+
+    <form id="taskForm" class="task-form">
+      <input type="text" id="taskText" placeholder="Escribe una tarea" required />
+      <input type="date" id="taskDate" title="prioridad" required />
+      <select id="taskPriority" title="dsas" required>
+        <option value="alta">Alta</option>
+        <option value="media">Media</option>
+        <option value="baja">Baja</option>
+      </select>
+      <button type="submit">Agregar</button>
+      <button type="button" id="exportCSV">📁 Exportar CSV</button>
+    </form>
+
+    <div class="filters">
+      <button onclick="renderTasks('todas')">Todas</button>
+      <button onclick="renderTasks('completadas')">Completadas</button>
+      <button onclick="renderTasks('pendientes')">Pendientes</button>
+    </div>
+
+    <div id="taskList"></div>
+  </div>
+  <img id="imagenTema" src="./jdlogo.png" alt="." />
+
+    <script src="script.js"></script>
+</body>
+</html>
